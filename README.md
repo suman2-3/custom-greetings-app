@@ -5,7 +5,7 @@ A React web application that lets users create personalized greeting cards with 
 ## Project Structure
 
 - `client/`: React application built with Create React App and Tailwind CSS
-- `server/`: placeholder for future backend implementation
+- `server/`: Node.js API serving greeting templates
 
 ## Features
 
@@ -16,25 +16,26 @@ A React web application that lets users create personalized greeting cards with 
 - Native sharing support with fallback download, WhatsApp, and email actions
 - Free/Premium content labels with a premium plan-selection popup
 - Route protection and local storage persistence
+- Backend `/api/templates` endpoint with client-side fallback data
 
 ## Setup
 
-1. Open a terminal in the project root.
-2. Change into the client folder:
+1. Open a terminal in the project root and start the backend:
    ```bash
-   cd client
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the app:
-   ```bash
+   cd server
    npm start
    ```
-5. Open `http://localhost:3000` in your browser.
+2. Open another terminal in the project root and start the client:
+   ```bash
+   cd client
+   npm install
+   npm start
+   ```
+3. Open `http://localhost:3000` in your browser.
+
+The client reads templates from `http://localhost:5000/api/templates` by default. To use a different API URL, set `REACT_APP_API_URL`.
 
 ## Notes
 
 - The app currently uses a mock Google login flow and demo premium checkout for evaluation purposes.
-- The backend folder is currently empty; you can extend it later with a real API or database.
+- The client falls back to local template data if the backend is unavailable.
