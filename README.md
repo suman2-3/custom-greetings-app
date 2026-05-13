@@ -2,6 +2,8 @@
 
 A React web application that lets users create personalized greeting cards with profile picture and name overlays. The app includes category filters, premium gating, preview, and image sharing.
 
+Live Demo: https://custom-greetings-app.onrender.com/
+
 ## Project Structure
 
 - `client/`: React application built with Create React App and Tailwind CSS
